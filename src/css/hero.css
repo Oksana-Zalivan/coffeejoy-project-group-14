@@ -1,6 +1,6 @@
-.hero{
-    background-repeat: no-repeat;
+.hero {
     background-image: url("/img/hero/hero-mobile-min.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 108px 0;
@@ -8,7 +8,7 @@
 
 @media (min-resolution: 192dpi) {
     .hero {
-        background-image:url("/img/hero/hero-mobile@2x-min.jpg");
+        background-image: url("/img/hero/hero-mobile@2x-min.jpg");
     }
 }
 
@@ -16,54 +16,46 @@
     max-width: 256px;
 }
 
-.hero-title{
-font-weight: 400;
-font-size: 40px;
-line-height: 120%;
-letter-spacing: -0.01em;
-color: #fff;
-margin-bottom: 24px;
+.hero-title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-bottom: 24px;
 }
 
-.hero-description{
-font-weight: 400;
-font-size: 18px;
-line-height: 150%;
-color: #fff;
-margin-bottom: 32px;
+.hero-description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #fff;
+    margin-bottom: 32px;
 }
 
-.hero-button{
-border-radius: 100px;
-border: none;
-padding: 10px 24px;
-width: 135px;
-height: 44px;
-box-shadow: 0 1px 2px 0 rgba(11, 8, 3, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(11, 8, 3, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-background: #6F4E37;
-stroke: #fff;
-stroke-width: 1px;
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-color: #fff;
-text-decoration: none;
+.hero-button {
+    border-radius: 100px;
+    border: none;
+    padding: 10px 24px;
+    box-shadow: 0 1px 2px rgba(11, 8, 3, 0.05),
+        inset 0 -2px 1px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(11, 8, 3, 0.15),
+        inset 0 2px 1px rgba(255, 255, 255, 0.25),
+        inset 0 32px 24px rgba(255, 255, 255, 0.05);
+    background: #6F4E37;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+    text-decoration: none;
 }
 
 .hero-button:hover {
-    box-shadow: 0 1px 2px 0 rgba(11, 8, 3, 0.05),
-        inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(11, 8, 3, 0.15),
-        inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-        inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-    background: #6f4e37;
     opacity: 0.5;
 }
 
-.hero-button:focus {
-    background: #6f4e37; }
-
-@media screen and (min-width:768px){
-    .hero{
+@media screen and (min-width: 768px) {
+    .hero {
         background-image: url("/img/hero/hero-min.jpg");
         padding-top: 311px;
         padding-bottom: 311px;
@@ -74,26 +66,26 @@ text-decoration: none;
     }
 }
 
-@media (min-resolution: 192dpi) {
-    .hero{
-        background-image:url("/img/hero/hero@2x-min.jpg");
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: url("/img/hero/hero@2x-min.jpg");
     }
 }
 
-@media screen and (min-width:1440px){
-    .hero{
+@media screen and (min-width: 1440px) {
+    .hero {
         background-image: url("/img/hero/hero-desktop-min.jpg");
         padding-top: 259px;
         padding-bottom: 259px;
     }
 
-    @media (min-resolution: 192dpi) {
-        .hero {
-            background-image:url("/img/hero/hero-desktop@2x-min.jpg");
-        }
-    }
-    
-    .hero-title{
+    .hero-title {
         width: 400px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: url("/img/hero/hero-desktop@2x-min.jpg");
     }
 }

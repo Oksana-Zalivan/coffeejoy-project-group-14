@@ -5,9 +5,15 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
+  const isDev = command === 'serve';
+
   return {
+    // 🔹 ВАЖЛИВО для GitHub Pages:
+    // у дев-режимі base = '/', у білді — '/coffeejoy-project-group-14/'
+    base: isDev ? '/' : '/coffeejoy-project-group-14/',
+
     define: {
-      [command === 'serve' ? 'global' : '_global']: {},
+      [isDev ? 'global' : '_global']: {},
     },
     root: 'src',
     build: {
@@ -46,3 +52,4 @@ export default defineConfig(({ command }) => {
     ],
   };
 });
+
