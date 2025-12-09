@@ -45,6 +45,11 @@
     text-decoration: none;
 }
 
+.nav-list-header-element:hover,
+.nav-list-header-element:focus {
+    text-decoration: underline;
+}
+
 @media (min-width: 320px) {
     .content-header {
         width: 100%;
@@ -58,13 +63,6 @@
     .logo-header,
     .button-header {
         margin: 0;
-    }
-}
-
-@media (min-width: 375px) {
-    .content-header {
-        max-width: 320px;
-        margin: 0 auto;
     }
 }
 

@@ -1,12 +1,12 @@
 .wellcome {
   padding: 64px 0;
 }
+
 @media (min-width: 768px) {
   .welcome-container {
   display: flex;
 }
 }
-
 
 .up-title-wellcome {
   display: block;
@@ -68,6 +68,7 @@
   background: #6f4e37;
   opacity: 0.5;
 }
+
 .button-loc:focus {
   background: #6f4e37;
 }
@@ -78,6 +79,7 @@
   width: 100%;
   height: auto;
 }
+
 .wellcome-img {
   border-radius: 40px;
   display: block;
@@ -86,16 +88,11 @@
   margin-bottom: 64px;
 }
 
-/*tablet*/
 @media screen and (min-width: 768px) {
-  .containerwellcome {
+  .welcome-container {
     padding: 0 32px;
   }
-  .wellcome-main{
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-  }
+
   .wellcome-part {
     display: flex;
     align-items: flex-start;
@@ -104,10 +101,12 @@
     gap: 16px;
     width: 50%;
   }
+
   .up-title-wellcome {
     margin-bottom: 16px;
     margin-top: 0;
   }
+
   .wellcome-part-two {
     display: flex;
     align-items: flex-start;
@@ -121,10 +120,12 @@
   .wellcome-text {
     margin-bottom: 0;
   }
+
   .button-loc {
     margin-left: 0;
     margin-bottom: 0;
   }
+
   .wellcome-img {
     margin-bottom: 32px;
     overflow: hidden; 
@@ -132,17 +133,9 @@
   }
 }
 
-/* desktop */
 @media screen and (min-width: 1440px) {
-  .containerwellcome {
+  .welcome-container {
     padding: 0 64px;
-  }
-  .wellcome-journey {
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: #0b0803;
   }
 
   .wellcome-part-two {
