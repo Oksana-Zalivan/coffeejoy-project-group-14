@@ -96,10 +96,9 @@
         width: 100%;
     }
 
-    .quality-item .quality-img-text:last-child {
+    .quality-item:last-child .quality-img-text {
         max-width: 440px;
     }
-
 }
 
 @media screen and (min-width: 1440px) {
