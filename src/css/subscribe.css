@@ -178,8 +178,12 @@
 @media screen and (min-width: 1440px){
 .container-subscribe{
     display: flex;
-    max-width: 1440px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 32px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .subscribe-title{

@@ -1,5 +1,5 @@
 .reviews {
-    padding: 64px 0;  
+    padding: 64px 0;
 }
 
 .reviews-container {
@@ -14,26 +14,40 @@
     line-height: 1.2;
     letter-spacing: -0.01em;
     text-transform: uppercase;
+    margin: 0;
 }
 
-.review-list{
+.review-list,
+.stars {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.review-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 24px;
+    align-items: center;
 }
 
 .review-card {
-    background-color: #C29D84;
-    width: 100%;
+    background-color: #c29d84;
+    width: 288px;
     border: 1px solid rgba(11, 8, 3, 0.15);
     border-radius: 32px;
     padding: 32px;
     display: flex;
     flex-direction: column;
-
 }
 
 @media (min-width: 768px) {
+    .review-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
     .review-card {
         width: calc((100% - 24px) / 2);
     }
@@ -42,6 +56,18 @@
 @media (min-width: 1440px) {
     .review-card {
         width: calc((100% - 72px) / 4);
+    }
+
+    .review-title {
+        width: 416px;
+        height: 116px;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -55,6 +81,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
+    margin: 0 0 24px;
 }
 
 .review-name {
@@ -67,5 +94,5 @@
 
 .icon {
     fill: none;
-    stroke: #0B0803;;
+    stroke: #0b0803;
 }
