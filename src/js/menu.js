@@ -1,38 +1,36 @@
 // ------For-Mobile-Menu----
-
 (() => {
-  const refs = {
-    openModalBtn: document.querySelector("[data-menu-open]"),
-    closeModalBtn: document.querySelector("[data-menu-close]"),
-    modal: document.querySelector("[data-menu]"),
-    menuLinks: document.querySelectorAll(".navbar-footer-text"),
-    logoInMenu: document.querySelector(".mobile-menu-logo"),
-  };
+  const modal = document.querySelector("[data-menu]");
+  const openBtn = document.querySelector("[data-menu-open]");
 
-  if (!refs.modal || !refs.openModalBtn || !refs.closeModalBtn) return;
+  if (!modal || !openBtn) return;
 
-  refs.openModalBtn.addEventListener("click", toggleMenu);
-  refs.closeModalBtn.addEventListener("click", toggleMenu);
+  const closeBtn = modal.querySelector("[data-menu-close]");
+  const menuLinks = modal.querySelectorAll(".navbar-footer-text");
+  const logoInMenu = modal.querySelector(".mobile-menu-logo");
 
-  // закрити по кліку на будь-який пункт меню
-  refs.menuLinks.forEach(link => {
+  if (!closeBtn) return;
+
+  openBtn.addEventListener("click", toggleMenu);
+  closeBtn.addEventListener("click", toggleMenu);
+
+  menuLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  // закрити по кліку на логотип у МЕНЮ
-  if (refs.logoInMenu) {
-    refs.logoInMenu.addEventListener("click", closeMenu);
+  if (logoInMenu) {
+    logoInMenu.addEventListener("click", closeMenu);
   }
 
   function toggleMenu() {
-    const isOpen = refs.modal.classList.contains("is-open");
-    refs.modal.classList.toggle("is-open");
-    document.body.style.overflow = isOpen ? "" : "hidden";
+    const isOpen = modal.classList.toggle("is-open");
+    document.body.style.overflow = isOpen ? "hidden" : "";
   }
 
   function closeMenu() {
-    refs.modal.classList.remove("is-open");
+    modal.classList.remove("is-open");
     document.body.style.overflow = "";
   }
 })();
+
 
