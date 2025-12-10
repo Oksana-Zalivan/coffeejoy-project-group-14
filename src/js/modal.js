@@ -1,28 +1,77 @@
 (() => {
   const refs = {
-    openModalBtn: document.querySelector('[data-open-modal]'),
-    closeModalBtns: document.querySelectorAll('[data-close-modal]'),
     modal: document.querySelector('[data-modal]'),
-    form: document.querySelector('form'), 
+    form: document.querySelector('.form-email'),
+    closeBtns: document.querySelectorAll('[data-modal-close]'),
+    validText: document.querySelector('.text-valid'),
+    invalidText: document.querySelector('.text-invalid'),
+    emailInput: document.querySelector('#user-email'),
   };
 
-  refs.openModalBtn.addEventListener('click', function (event) {
-    event.preventDefault(); 
+  if (!refs.modal || !refs.form) return;
 
+  refs.form.addEventListener('submit', event => {
+    event.preventDefault();
 
     if (!refs.form.checkValidity()) {
-      refs.form.reportValidity(); 
-      return; 
+      refs.form.reportValidity();
+      showInvalidMessage();
+      return;
     }
 
-    toggleModal(); 
+    showValidMessage();
+    openModal();
+    clearForm();
   });
 
-  refs.closeModalBtns.forEach(btn => {
-    btn.addEventListener('click', toggleModal);
+  refs.closeBtns.forEach(btn => {
+    btn.addEventListener('click', closeModal);
   });
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-open');
+  refs.modal.addEventListener('click', event => {
+    if (event.target === refs.modal) closeModal();
+  });
+
+  window.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && refs.modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  // ---------------------------
+  // Functions
+  // ---------------------------
+
+  function openModal() {
+    refs.modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    refs.modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function clearForm() {
+    refs.form.reset();
+    hideMessages();
+  }
+
+  function showValidMessage() {
+    refs.validText.style.display = 'block';
+    refs.invalidText.style.display = 'none';
+  }
+
+  function showInvalidMessage() {
+    refs.invalidText.style.display = 'block';
+    refs.validText.style.display = 'none';
+  }
+
+  function hideMessages() {
+    refs.validText.style.display = 'none';
+    refs.invalidText.style.display = 'none';
   }
 })();
+
+
+
