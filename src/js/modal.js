@@ -38,10 +38,6 @@
     }
   });
 
-  // ---------------------------
-  // Functions
-  // ---------------------------
-
   function openModal() {
     refs.modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';

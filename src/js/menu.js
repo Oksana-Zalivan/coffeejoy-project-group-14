@@ -1,4 +1,3 @@
-// ------For-Mobile-Menu----
 (() => {
   const modal = document.querySelector("[data-menu]");
   const openBtn = document.querySelector("[data-menu-open]");
