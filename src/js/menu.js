@@ -2,19 +2,37 @@
 
 (() => {
   const refs = {
-    // Додати атрибут data-modal-open на кнопку відкриття
     openModalBtn: document.querySelector("[data-menu-open]"),
-    // Додати атрибут data-modal-close на кнопку закриття
     closeModalBtn: document.querySelector("[data-menu-close]"),
-    // Додати атрибут data-modal на бекдроп модалки
     modal: document.querySelector("[data-menu]"),
+    menuLinks: document.querySelectorAll(".navbar-footer-text"),
+    logoInMenu: document.querySelector(".mobile-menu-logo"),
   };
 
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
+  if (!refs.modal || !refs.openModalBtn || !refs.closeModalBtn) return;
 
-  function toggleModal() {
-    // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
+  refs.openModalBtn.addEventListener("click", toggleMenu);
+  refs.closeModalBtn.addEventListener("click", toggleMenu);
+
+  // закрити по кліку на будь-який пункт меню
+  refs.menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // закрити по кліку на логотип у МЕНЮ
+  if (refs.logoInMenu) {
+    refs.logoInMenu.addEventListener("click", closeMenu);
+  }
+
+  function toggleMenu() {
+    const isOpen = refs.modal.classList.contains("is-open");
     refs.modal.classList.toggle("is-open");
+    document.body.style.overflow = isOpen ? "" : "hidden";
+  }
+
+  function closeMenu() {
+    refs.modal.classList.remove("is-open");
+    document.body.style.overflow = "";
   }
 })();
+
